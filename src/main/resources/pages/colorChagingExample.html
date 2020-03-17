@@ -7,10 +7,15 @@
 </head>
 <body  ng-app="" ng-init="myCol='lightblue'" style="background-color:{{myCol}}">
 
-<div >
+<label for="myCol">Enter the color you would like the page to be: </label>
+<input id="myCol" ng-model="myCol">
 
-    <input ng-model="myCol">
-
+<div ng-app="" ng-init="names=['Jani','Hege','Kai']">
+    <ul>
+        <li ng-repeat="x in names">
+            {{ x }}
+        </li>
+    </ul>
 </div>
 
 </body>
