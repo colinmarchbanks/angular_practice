@@ -5,18 +5,34 @@
     <title>Title</title>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
 </head>
-<body  ng-app="" ng-init="myCol='lightblue'" style="background-color:{{myCol}}">
+<body  ng-app="ex" ng-init="myCol='lightblue'" style="background-color:{{myCol}}">
 
 <label for="myCol">Enter the color you would like the page to be: </label>
 <input id="myCol" ng-model="myCol">
 
-<div ng-app="" ng-init="names=['Jani','Hege','Kai']">
+<div ng-app="" ng-init="names=[
+{name:'Jani',country:'Norway',cat:'Yes'},
+{name:'Hege',country:'Sweden',cat:'No'},
+{name:'Kai',country:'Denmark',cat:'Yes'}]">
+
     <ul>
         <li ng-repeat="x in names">
-            {{ x }}
+            {{ x.name + ', ' + x.country + ', does this person own a cat? : ' + x.cat}}
         </li>
     </ul>
+
 </div>
+
+<w3-test-directive></w3-test-directive>
+
+<script>
+    var app = angular.module("ex",[]);
+    app.directive("w3TestDirective", function() {
+        return {
+            template : "<h1>This is a custom directive</h1>"
+        };
+    });
+</script>
 
 </body>
 </html>
