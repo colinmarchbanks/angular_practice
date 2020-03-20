@@ -6,17 +6,42 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
 
 </head>
+<style>
+    input.ng-invalid {
+        background-color: lightblue;
+    }
+</style>
 <body>
-<div ng-app="myApp" ng-controller="myCtrl">
-    Name: <input ng-model="name">
-    <h1>You entered: {{name}}</h1>
-</div>
 
-<script>
-    var app = angular.module('myApp', []);
-    app.controller('myCtrl', function($scope) {
-        $scope.name = "John Doe";
-    });
-</script>
+<form ng-app="" name="myForm">
+    Enter your name:
+    <input name="myName" ng-model="myText" required>
+</form>
+<!--<div ng-app="myApp" ng-controller="myCtrl">-->
+<!--    Name: <input ng-model="name">-->
+<!--    <h1>You entered: {{name}}</h1>-->
+<!--</div>-->
+
+<!--<form ng-app="" name="myForm">-->
+<!--    Email:-->
+<!--    <input type="email" name="myAddress" ng-model="text">-->
+<!--    <span ng-show="myForm.myAddress.$error.email">Not a valid e-mail address</span>-->
+<!--</form>-->
+
+<!--<form ng-app="" name="myForm" ng-init="myText = 'post@myweb.com'">-->
+<!--    Email:-->
+<!--    <input type="email" name="myAddress" ng-model="myText" required>-->
+<!--    <h1>Status</h1>-->
+<!--    {{myForm.myAddress.$valid}}-->
+<!--    {{myForm.myAddress.$dirty}}-->
+<!--    {{myForm.myAddress.$touched}}-->
+<!--</form>-->
+
+<!--<script>-->
+<!--    var app = angular.module('myApp', []);-->
+<!--    app.controller('myCtrl', function($scope) {-->
+<!--        $scope.name = "John Doe";-->
+<!--    });-->
+<!--</script>-->
 </body>
 </html>
